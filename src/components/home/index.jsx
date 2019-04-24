@@ -11,6 +11,7 @@ class Home extends Component {
         <div>234</div>
         <div>456</div>
         <div>789</div>
+        <div>今天下雨</div>
       </>
       
     )
