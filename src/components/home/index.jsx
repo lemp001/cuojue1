@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import store from '../../store'
+import {Button, Input, List, Typography} from 'antd'
 
 class Home extends Component {
   constructor (props) {
@@ -15,17 +16,22 @@ class Home extends Component {
         <div>456</div>
         <div>789</div>
         <div>今天下雨</div>
-        <input 
+        <Input
+          style={{width: 300, marginRight: 20, marginBottom: 20}} 
           value={this.state.inputValue}
           onChange={(e) => this.handleInputChange(e.target.value)}  
         />
-        <button
-          style={{paddingLeft: 20}}
+        <Button
+          style={{}}
           onClick={this.handleClickChange}
-        >按钮</button>
-        {
-          this.state.list.map((item, index) => <div key={index} onClick={() => this.handleDelete(index)}>{item}</div>)
-        }
+        >按钮</Button>
+        <List
+          style={{width: 300}}
+          bordered
+          dataSource={this.state.list}
+          renderItem={(item, index) => (<List.Item onClick={() => this.handleDelete(index)}><Typography.Text mark>[ITEM]</Typography.Text> {item}</List.Item>)}
+        />
+       
       </div>
     )
   }
